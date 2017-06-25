@@ -18,4 +18,22 @@ struct Constants {
     struct TableViewCell {
         static let resultsCell = "resultsCell"
     }
+    
+    // Search Parameters
+    struct SearchParameters {
+        static let title = "title"
+        static let author = "author"
+        static let isbn = "isbn"
+    }
+    
+    // Affiliate LInk
+    struct iTunesAffiliate {
+        static let affiliateLink = "1001lxxD"
+    }
+    
+    // Errors
+    enum SearchError: Error {
+        case invalidSearchParameters
+        case NoSearchParameters
+    }
 }

@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="1iX-SQ-0Hn">
-                                <rect key="frame" x="16" y="179" width="343" height="329"/>
+                                <rect key="frame" x="16" y="135" width="343" height="329"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search iBooks By..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M9y-8b-60G">
                                         <rect key="frame" x="66" y="0.0" width="211.5" height="30"/>
@@ -87,14 +87,14 @@
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86P-Uk-SFk">
-                                <rect key="frame" x="328" y="617" width="31" height="30"/>
+                                <rect key="frame" x="308" y="582" width="51" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Info Button" image="icons8-Info_50"/>
                                 <connections>
@@ -102,11 +102,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EiZ-36-oWT">
-                                <rect key="frame" x="152" y="566" width="70" height="39"/>
+                                <rect key="frame" x="152" y="522" width="70" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Search"/>
                                 <connections>
                                     <action selector="searchButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ext-zt-JdH"/>
+                                    <segue destination="87a-ai-SL0" kind="show" identifier="showResults" id="Vin-3B-XbL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -120,25 +121,80 @@
                             <constraint firstItem="EiZ-36-oWT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="136" id="cQ5-k6-gUr"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="cLR-6c-KGo"/>
                     <connections>
                         <outlet property="authorTextField" destination="7mV-EX-ndW" id="7En-e1-eZz"/>
                         <outlet property="isbnTextField" destination="wUw-0d-ofs" id="oGz-wx-TU9"/>
                         <outlet property="titleTextField" destination="Pov-tq-eR2" id="IcR-oc-QSq"/>
-                        <segue destination="AQJ-dq-w2Q" kind="show" identifier="showResults" id="Kgm-sZ-JCt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1130.4000000000001" y="77.811094452773617"/>
+            <point key="canvasLocation" x="32.799999999999997" y="37.331334332833585"/>
         </scene>
-        <!--SearchResults-->
-        <scene sceneID="7bc-RP-5fl">
+        <!--Search Results-->
+        <scene sceneID="yB7-hh-zbQ">
             <objects>
-                <viewControllerPlaceholder storyboardName="SearchResults" id="AQJ-dq-w2Q" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Mvm-2h-Ofn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="tKT-3S-25e" customClass="ResultsViewController" customModule="iTunes_Search_API" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="40A-Mb-Sgy"/>
+                        <viewControllerLayoutGuide type="bottom" id="Pgx-oL-doo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Qfj-yM-Nu6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aeu-KZ-piF">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="resultsCell" rowHeight="150" id="ffg-12-YAo" customClass="ResultsTableViewCell" customModule="iTunes_Search_API" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="150"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ffg-12-YAo" id="xcU-Qq-Smn">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="tKT-3S-25e" id="e5q-C8-KNX"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aeu-KZ-piF" firstAttribute="top" secondItem="Qfj-yM-Nu6" secondAttribute="top" id="7aE-10-zqe"/>
+                            <constraint firstAttribute="trailing" secondItem="aeu-KZ-piF" secondAttribute="trailing" id="Rcu-kq-RCY"/>
+                            <constraint firstAttribute="bottom" secondItem="aeu-KZ-piF" secondAttribute="bottom" id="j3h-Qs-4zI"/>
+                            <constraint firstItem="aeu-KZ-piF" firstAttribute="leading" secondItem="Qfj-yM-Nu6" secondAttribute="leading" id="ve8-IM-LB4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Search Results" id="B0h-iN-8pa"/>
+                    <connections>
+                        <outlet property="tableView" destination="aeu-KZ-piF" id="b6R-wP-sRf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="102-Vr-8NA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1765" y="77"/>
+            <point key="canvasLocation" x="2036" y="36.431784107946029"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Rvy-Na-tZN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="87a-ai-SL0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EQZ-i4-6uf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tKT-3S-25e" kind="relationship" relationship="rootViewController" id="SjP-P0-xaI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9qU-rJ-qZC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1096.8" y="36.431784107946029"/>
         </scene>
     </scenes>
     <resources>
