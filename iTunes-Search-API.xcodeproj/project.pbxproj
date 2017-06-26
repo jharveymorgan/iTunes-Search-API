@@ -22,6 +22,7 @@
 		BAE5F6A81EFD719900BDB68D /* Storyboard+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE5F6A71EFD719900BDB68D /* Storyboard+Utility.swift */; };
 		BAE5F6AA1EFD83E600BDB68D /* UserServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE5F6A91EFD83E600BDB68D /* UserServices.swift */; };
 		BAF479861F01650000CED232 /* ResultsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF479851F01650000CED232 /* ResultsDetailViewController.swift */; };
+		BAF479881F018E9600CED232 /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF479871F018E9600CED232 /* InformationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		BAE5F6A71EFD719900BDB68D /* Storyboard+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Storyboard+Utility.swift"; path = "Extensions/Storyboard+Utility.swift"; sourceTree = "<group>"; };
 		BAE5F6A91EFD83E600BDB68D /* UserServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserServices.swift; path = Services/UserServices.swift; sourceTree = "<group>"; };
 		BAF479851F01650000CED232 /* ResultsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultsDetailViewController.swift; path = Controllers/ResultsDetailViewController.swift; sourceTree = "<group>"; };
+		BAF479871F018E9600CED232 /* InformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InformationViewController.swift; path = Controllers/InformationViewController.swift; sourceTree = "<group>"; };
 		D96ED9E9910517301CBE6C43 /* Pods_iTunes_Search_API.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iTunes_Search_API.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -117,6 +119,7 @@
 				BA332E031EFC52040054E2ED /* SearchByViewController.swift */,
 				BAA5407C1EFD5B8400E2DA5C /* ResultsViewController.swift */,
 				BAF479851F01650000CED232 /* ResultsDetailViewController.swift */,
+				BAF479871F018E9600CED232 /* InformationViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAA540821EFD5F1700E2DA5C /* Constants.swift in Sources */,
+				BAF479881F018E9600CED232 /* InformationViewController.swift in Sources */,
 				BA332E041EFC52040054E2ED /* SearchByViewController.swift in Sources */,
 				BAE5F6AA1EFD83E600BDB68D /* UserServices.swift in Sources */,
 				BA332DF21EFC51130054E2ED /* AppDelegate.swift in Sources */,

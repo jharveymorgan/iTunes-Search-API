@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="1iX-SQ-0Hn">
-                                <rect key="frame" x="16" y="179" width="343" height="329"/>
+                                <rect key="frame" x="16" y="135" width="343" height="329"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search iBooks By..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M9y-8b-60G">
                                         <rect key="frame" x="66" y="0.0" width="211.5" height="30"/>
@@ -99,10 +99,11 @@
                                 <state key="normal" title="Info Button" image="icons8-Info_50"/>
                                 <connections>
                                     <action selector="infoButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HjI-lv-ix2"/>
+                                    <segue destination="eOT-FV-r0g" kind="show" identifier="showInfo" id="EnV-Fw-fQ2"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EiZ-36-oWT">
-                                <rect key="frame" x="152" y="566" width="70" height="39"/>
+                                <rect key="frame" x="152" y="522" width="70" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Search"/>
                                 <connections>
@@ -132,6 +133,46 @@
             </objects>
             <point key="canvasLocation" x="1130.4000000000001" y="77.811094452773617"/>
         </scene>
+        <!--About Us-->
+        <scene sceneID="8KS-DJ-R9g">
+            <objects>
+                <viewController id="XRD-XO-vY7" customClass="InformationViewController" customModule="iTunes_Search_API" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6Fk-Jz-LH7"/>
+                        <viewControllerLayoutGuide type="bottom" id="7Pk-VO-btK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Q67-4j-oWU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dg5-Q0-4LT">
+                                <rect key="frame" x="125" y="318" width="124" height="30"/>
+                                <state key="normal" title="Icons by Icons8"/>
+                                <connections>
+                                    <action selector="icons8Tapped:" destination="XRD-XO-vY7" eventType="touchUpInside" id="KAn-PZ-7Dv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="dg5-Q0-4LT" secondAttribute="trailing" constant="110" id="6Ea-3x-Fq0"/>
+                            <constraint firstItem="dg5-Q0-4LT" firstAttribute="top" secondItem="6Fk-Jz-LH7" secondAttribute="bottom" constant="254" id="f4l-mA-vhw"/>
+                            <constraint firstItem="dg5-Q0-4LT" firstAttribute="leading" secondItem="Q67-4j-oWU" secondAttribute="leadingMargin" constant="109" id="sAx-EM-ptK"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="About Us" id="yza-q8-04F">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="SRt-r2-LPQ">
+                            <connections>
+                                <segue destination="ozN-EH-4fU" kind="unwind" unwindAction="unwindToSearchByViewController:" id="Fp7-ib-dHy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZRK-8O-gvB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ozN-EH-4fU" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1968.8" y="793.8530734632684"/>
+        </scene>
         <!--SearchResults-->
         <scene sceneID="7bc-RP-5fl">
             <objects>
@@ -139,6 +180,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mvm-2h-Ofn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1765" y="77"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rHA-1p-Id2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eOT-FV-r0g" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cXG-FW-S2K">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="XRD-XO-vY7" kind="relationship" relationship="rootViewController" id="GwB-cN-YU1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k6Y-eC-KGv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1130" y="794"/>
         </scene>
     </scenes>
     <resources>

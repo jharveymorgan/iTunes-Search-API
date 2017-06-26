@@ -92,12 +92,19 @@
                             <constraint firstItem="aeu-KZ-piF" firstAttribute="leading" secondItem="Qfj-yM-Nu6" secondAttribute="leading" id="ve8-IM-LB4"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Search Results" id="B0h-iN-8pa"/>
+                    <navigationItem key="navigationItem" title="Search Results" id="B0h-iN-8pa">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="Kn7-1p-VD7">
+                            <connections>
+                                <segue destination="oLL-V2-TBW" kind="unwind" unwindAction="unwindToSearchByViewController:" id="yEM-C8-8X9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="aeu-KZ-piF" id="b6R-wP-sRf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="102-Vr-8NA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="oLL-V2-TBW" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2036" y="36.431784107946029"/>
         </scene>

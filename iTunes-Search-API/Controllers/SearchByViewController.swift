@@ -52,8 +52,10 @@ class SearchByViewController: UIViewController {
     }
 
     @IBAction func infoButtonTapped(_ sender: Any) {
-        print("information button tapped")
+        performSegue(withIdentifier: Constants.Segue.showInfo, sender: self)
     }
+    
+    @IBAction func unwindToSearchByViewController(_ segue: UIStoryboardSegue) {}
     
     // MARK: - Functions
     // check user is only searching by one parameter
