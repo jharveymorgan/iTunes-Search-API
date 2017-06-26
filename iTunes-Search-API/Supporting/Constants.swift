@@ -12,6 +12,7 @@ struct Constants {
     // Segues
     struct Segue {
         static let showResults = "showResults"
+        static let showResultDetail = "showResultDetail"
     }
     
     // Cells
@@ -28,7 +29,7 @@ struct Constants {
     
     // Affiliate LInk
     struct iTunesAffiliate {
-        static let affiliateLink = "1001lxxD"
+        static let affiliateID = "1001lxxD"
     }
     
     // Errors

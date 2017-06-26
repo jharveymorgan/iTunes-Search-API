@@ -10,7 +10,7 @@ import UIKit
 import Kingfisher
 
 class ResultsViewController: UIViewController {
-    // MARK: - Properties
+    // MARK: - Propertievar   
     var searchParameter: String = ""
     var bookResults = [Book]()
     
@@ -55,6 +55,15 @@ class ResultsViewController: UIViewController {
     }
     
     // MARK: - Segue(s)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Constants.Segue.showResultDetail {
+            let detailController = segue.destination as! ResultsDetailViewController
+            
+            // get path and book for row that was tapped
+            let indexPath = tableView.indexPathForSelectedRow
+            detailController.book = bookResults[(indexPath?.row)!]
+        }
+    }
     
 }
 
@@ -65,10 +74,8 @@ extension ResultsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // get information to display from the array of Books
         let book = bookResults[indexPath.row]
-        
-        print(book.author)
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TableViewCell.resultsCell) as! ResultsTableViewCell
         
         // display results
@@ -88,12 +95,6 @@ extension ResultsViewController: UITableViewDelegate {
     // height for each cell
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
-    }
-    
-    // user tapped a row, show the results in detail
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // Do stuff here
-        print("user selected row \(indexPath.row)")
     }
 }
 

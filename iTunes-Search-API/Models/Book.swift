@@ -17,8 +17,20 @@ class Book {
     var link: String
     var id: Int
     
+    // convert the dateto the correct format
+    var correctDate: Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        let date = dateFormatter.date(from: releaseDate)!
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.year, .month, .day, .hour], from: date)
+        let finalDate = calendar.date(from:components)
+        
+        return finalDate!
+    }
     
-    init(json: JSON) {
+    
+    /*init(json: JSON) {
         self.title = json["trackName"].stringValue
         self.author = json["artistName"].stringValue
         self.releaseDate = json["releaseDate"].stringValue
@@ -34,7 +46,7 @@ class Book {
         self.price = price
         self.link = link
         self.id = id
-    }
+    } */
     
     init() {
         self.title = ""
