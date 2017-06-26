@@ -18,6 +18,7 @@ class ResultsDetailViewController: UIViewController {
     @IBOutlet weak var releaseDateLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var coverImage: UIImageView!
+    @IBOutlet weak var buyButton: UIButton!
     
     let timestampFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
@@ -30,6 +31,7 @@ class ResultsDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // show all book information
         configureBookDetail(book: book)
     }
     
