@@ -26,8 +26,11 @@ class SearchByViewController: UIViewController {
     // MARK: - VC Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.titleTextField.delegate = self
     }
     
+    // MARK: - Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Constants.Segue.showResults {
             let search = getSearchBy()
@@ -96,6 +99,7 @@ class SearchByViewController: UIViewController {
         
         return "Error finding parameters"
     }
+    
 
 }//end class
 
@@ -121,3 +125,10 @@ extension SearchByViewController {
     
 }
 
+// MARK: - UITextFieldDelegate
+extension SearchByViewController: UITextFieldDelegate {
+    // dismiss keyboard when user touches outside
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+}

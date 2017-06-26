@@ -9,7 +9,12 @@
 import UIKit
 
 class ResultsTableViewCell: UITableViewCell {
-
+    // MARK: - Properties
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var coverImage: UIImageView!
+    
+    // MARK: - Cell Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

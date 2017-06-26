@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="87a-ai-SL0">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,17 +26,60 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="resultsCell" rowHeight="150" id="ffg-12-YAo" customClass="ResultsTableViewCell" customModule="iTunes_Search_API" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="resultsCell" rowHeight="150" id="ffg-12-YAo" customClass="ResultsTableViewCell" customModule="iTunes_Search_API" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ffg-12-YAo" id="xcU-Qq-Smn">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="149.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="apy-Rs-68c">
+                                                    <rect key="frame" x="119" y="45" width="215" height="61"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWO-db-05q">
+                                                            <rect key="frame" x="0.0" y="0.0" width="215" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yap-Kz-89m">
+                                                            <rect key="frame" x="0.0" y="40.5" width="215" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="215" id="tG3-dY-8ic"/>
+                                                    </constraints>
+                                                </stackView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aEA-jA-QFg">
+                                                    <rect key="frame" x="8" y="25" width="70" height="100"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="70" id="EcI-dK-oHY"/>
+                                                        <constraint firstAttribute="height" constant="100" id="Yrj-9r-SFk"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="apy-Rs-68c" firstAttribute="trailing" secondItem="xcU-Qq-Smn" secondAttribute="trailingMargin" id="H7U-Qi-KOR"/>
+                                                <constraint firstItem="apy-Rs-68c" firstAttribute="top" secondItem="xcU-Qq-Smn" secondAttribute="topMargin" constant="37" id="QnK-Tf-yA5"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="apy-Rs-68c" secondAttribute="bottom" constant="35.5" id="daQ-uT-wZG"/>
+                                                <constraint firstItem="apy-Rs-68c" firstAttribute="leading" secondItem="aEA-jA-QFg" secondAttribute="trailing" constant="41" id="gCb-gU-Aaa"/>
+                                                <constraint firstItem="aEA-jA-QFg" firstAttribute="leading" secondItem="xcU-Qq-Smn" secondAttribute="leadingMargin" id="ltL-ip-aEK"/>
+                                                <constraint firstItem="aEA-jA-QFg" firstAttribute="top" secondItem="xcU-Qq-Smn" secondAttribute="topMargin" constant="17" id="wnS-1g-PZp"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="authorLabel" destination="Yap-Kz-89m" id="s5z-yJ-P9z"/>
+                                            <outlet property="coverImage" destination="aEA-jA-QFg" id="B13-3c-8ch"/>
+                                            <outlet property="titleLabel" destination="FWO-db-05q" id="LTv-6Z-ODU"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="tKT-3S-25e" id="e5q-C8-KNX"/>
+                                    <outlet property="delegate" destination="tKT-3S-25e" id="Nmi-Wi-iYT"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -57,7 +105,6 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="87a-ai-SL0" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4_7.fullscreen"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="EQZ-i4-6uf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

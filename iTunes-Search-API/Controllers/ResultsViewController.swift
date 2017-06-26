@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ResultsViewController: UIViewController {
     // MARK: - Properties
@@ -31,6 +32,7 @@ class ResultsViewController: UIViewController {
             for result in response {
                 let book = Book()
                 
+                
 //                guard let title = result["trackName"] as? String, let author = result["artistName"] as? String, let releaseDate = result["releaseDate"] as? String, let price = result["formattedPrice"] as? String, let link = result["artworkUrl60"] as? String, let id = result["trackId"] as? String else {
 //                        print("error with guard statement")
 //                        break
@@ -41,17 +43,18 @@ class ResultsViewController: UIViewController {
                 if let author = result["artistName"] { book.author = author as! String }
                 if let releaseDate = result["releaseDate"] { book.releaseDate = releaseDate as! String }
                 if let price = result["formattedPrice"] { book.price = price as! String }
-                if let link = result["artworkUrl60"] { book.link = link as! String }
+                if let link = result["artworkUrl100"] { book.link = link as! String }
                 if let id = result["trackId"] { book.id = id as! Int }
                 
                 self.bookResults.append(book)
             }
             
-            // create array of books
-            print(self.bookResults)
-            print("\nDone with Network Request")
+            // display results
+            self.tableView.reloadData()
         }
     }
+    
+    // MARK: - Segue(s)
     
 }
 
@@ -62,8 +65,36 @@ extension ResultsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TableViewCell.resultsCell, for: indexPath)
+        let book = bookResults[indexPath.row]
+        
+        print(book.author)
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TableViewCell.resultsCell) as! ResultsTableViewCell
+        
+        // display results
+        cell.titleLabel.text = book.title
+        cell.authorLabel.text = book.author
+        
+        let coverURL = URL(string: book.link)
+        cell.coverImage.kf.setImage(with: coverURL)
+        
         return cell
     }
 }
+
+// MARK: - UITableViewDelegate
+extension ResultsViewController: UITableViewDelegate {
+    
+    // height for each cell
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
+    }
+    
+    // user tapped a row, show the results in detail
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Do stuff here
+        print("user selected row \(indexPath.row)")
+    }
+}
+
 
