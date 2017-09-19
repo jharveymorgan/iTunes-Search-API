@@ -1,41 +1,36 @@
 PODS:
-  - Alamofire (4.5.0)
+  - Alamofire (4.5.1)
   - AlamofireNetworkActivityIndicator (2.2.0):
     - Alamofire (~> 4.5)
-  - Kingfisher (3.10.2)
-  - SwiftyJSON (2.3.2)
+  - Kingfisher (4.0.1)
+  - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - Alamofire (from `https://github.com/Alamofire/Alamofire.git`)
   - AlamofireNetworkActivityIndicator (from `https://github.com/Alamofire/AlamofireNetworkActivityIndicator.git`)
-  - Kingfisher (~> 3.0)
-  - SwiftyJSON (from `https://github.com/IBM-Swift/SwiftyJSON.git`)
+  - Kingfisher (~> 4.0)
+  - SwiftyJSON
 
 EXTERNAL SOURCES:
   Alamofire:
     :git: https://github.com/Alamofire/Alamofire.git
   AlamofireNetworkActivityIndicator:
     :git: https://github.com/Alamofire/AlamofireNetworkActivityIndicator.git
-  SwiftyJSON:
-    :git: https://github.com/IBM-Swift/SwiftyJSON.git
 
 CHECKOUT OPTIONS:
   Alamofire:
-    :commit: 7fe7b918b746fbb4b7a7c2146bef7a88c7ddc54e
+    :commit: b8995447518fd57af14c88a47f27434a16f60403
     :git: https://github.com/Alamofire/Alamofire.git
   AlamofireNetworkActivityIndicator:
     :commit: da5fe47a66e05e9c3b18e2e2997b6edd60aa0c53
     :git: https://github.com/Alamofire/AlamofireNetworkActivityIndicator.git
-  SwiftyJSON:
-    :commit: 4c57d4680e2b3d7be0e7c36737f99b6b36f09aac
-    :git: https://github.com/IBM-Swift/SwiftyJSON.git
 
 SPEC CHECKSUMS:
-  Alamofire: 2983f0804e7566e66b937f5e7ef4aeba7b910426
+  Alamofire: 0224236301daac8c6578172706304b66b48236b5
   AlamofireNetworkActivityIndicator: 1b37f625e82da75465fc624bf26cf37cabd99a42
-  Kingfisher: 7297492bf8cec9b2e2dee3519f2219948580d98e
-  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+  Kingfisher: b771785e9461ed4b8686d40e7145f9e58100cb24
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 3158546766d6ff02e6db047e071654b92289764d
+PODFILE CHECKSUM: 85563873e1c19d0aeda0891c7484176878d9d2b3
 
 COCOAPODS: 1.2.0

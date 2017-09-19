@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="87a-ai-SL0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="87a-ai-SL0">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -125,7 +125,7 @@
                                 <rect key="frame" x="37" y="179" width="300" height="112"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NnN-tX-9so">
-                                        <rect key="frame" x="111.5" y="0.0" width="77" height="20.5"/>
+                                        <rect key="frame" x="112" y="0.0" width="76.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -149,9 +149,6 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="gYU-TP-4G9"/>
-                                </constraints>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uKC-qH-yTb">
                                 <rect key="frame" x="152" y="331" width="70" height="100"/>
@@ -178,6 +175,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="H6j-0l-8OO" secondAttribute="trailing" constant="121" id="VuN-Ek-KfU"/>
                             <constraint firstItem="Emr-Tw-mL6" firstAttribute="top" secondItem="A0Z-Jy-tyc" secondAttribute="bottom" constant="115" id="XFU-1g-cJO"/>
                             <constraint firstItem="uKC-qH-yTb" firstAttribute="top" secondItem="Emr-Tw-mL6" secondAttribute="bottom" constant="40" id="YVl-fM-Q8e"/>
+                            <constraint firstItem="uKC-qH-yTb" firstAttribute="centerX" secondItem="DJC-wS-OTz" secondAttribute="centerX" id="bzI-ji-wY8"/>
                             <constraint firstItem="uKC-qH-yTb" firstAttribute="leading" secondItem="DJC-wS-OTz" secondAttribute="leadingMargin" constant="136" id="hhD-Jd-h7f"/>
                             <constraint firstItem="H6j-0l-8OO" firstAttribute="top" secondItem="uKC-qH-yTb" secondAttribute="bottom" constant="50" id="o8o-s0-ycO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Emr-Tw-mL6" secondAttribute="trailing" constant="22" id="t7R-wx-jF0"/>
@@ -203,7 +201,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="87a-ai-SL0" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="EQZ-i4-6uf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

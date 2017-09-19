@@ -8,11 +8,14 @@ target 'iTunes-Search-API' do
   # use_frameworks!
 
   # Pods for iTunes-Search-API
-  pod 'Kingfisher', '~> 3.0'
+  pod 'Kingfisher', '~> 4.0'
 
-  pod 'SwiftyJSON', :git => 'https://github.com/IBM-Swift/SwiftyJSON.git'
+#pod 'SwiftyJSON', :git => 'https://github.com/IBM-Swift/SwiftyJSON.git'
+  pod 'SwiftyJSON'
+
 
   pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git'
+  
   pod 'AlamofireNetworkActivityIndicator', :git => 'https://github.com/Alamofire/AlamofireNetworkActivityIndicator.git'
 
 
